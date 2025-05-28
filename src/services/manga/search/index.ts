@@ -9,7 +9,7 @@ import { ComicsProps } from "../home/types.ts";
 export const mangaSearchData = async (query: string): Promise<ComicsProps[]> => {
   const encoded = encodeURIComponent(query);
   const document = (await parser(`${BASE_URL}/?s=${encoded}`)) as HTMLDocument;
-  const results = document.querySelectorAll(".listupd > .bs") as unknown as Element[];
+  const results = document.querySelectorAll(".listupd > .animepost") as unknown as Element[];
 
   const comicsList: ComicsProps[] = [];
   results.forEach((comic) => {
